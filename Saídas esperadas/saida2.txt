@@ -1,0 +1,28 @@
+Exemplo de saída para opção CÍRCULO
+
+Este programa calcula a área e o perímetro de figuras regulares
+Escolha o tipo de figura (1 ou 2): 
+   Digite 1 para CÍRCULO
+   Digite outro valor para RETÂNGULO
+Digite a sua opção: 1
+Informe o raio do círculo (cm): 10
+
+A área da Círculo é: 314.16 cm².
+O perímetro da Círculo é: 62.83 cm.
+
+------------------------------------------
+
+
+Exemplo de saída para opção RETÂNGULO
+
+Este programa calcula a área e o perímetro de figuras regulares
+Escolha o tipo de figura (1 ou 2): 
+   Digite 1 para CÍRCULO
+   Digite outro valor para RETÂNGULO
+Digite a sua opção: 34
+Informe as dimensões retângulo (cm)
+base = 4
+altura = 2
+
+A área da Retângulo é: 8.00 cm².
+O perímetro da Retângulo é: 12.00 cm.

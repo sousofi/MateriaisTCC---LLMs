@@ -1,0 +1,305 @@
+Module(
+    body=[
+        Import(
+            names=[
+                alias(name='numpy', asname='np')]),
+        Assign(
+            targets=[
+                Name(id='m', ctx=Store()),
+                Name(id='n', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Informe a dimensão da matriz [2, 10]: ')],
+                        keywords=[])],
+                keywords=[])),
+        While(
+            test=BoolOp(
+                op=Or(),
+                values=[
+                    Compare(
+                        left=Name(id='m', ctx=Load()),
+                        ops=[
+                            Lt()],
+                        comparators=[
+                            Constant(value=2)]),
+                    Compare(
+                        left=Name(id='m', ctx=Load()),
+                        ops=[
+                            Gt()],
+                        comparators=[
+                            Constant(value=10)])]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            Constant(value='A dimensão deve ser entre 2 e 10')],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='m', ctx=Store())],
+                    value=Call(
+                        func=Name(id='int', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='Informe a dimensão da matriz [2, 10]: ')],
+                                keywords=[])],
+                        keywords=[]))],
+            orelse=[]),
+        Assign(
+            targets=[
+                Name(id='A', ctx=Store())],
+            value=Call(
+                func=Attribute(
+                    value=Name(id='np', ctx=Load()),
+                    attr='zeros',
+                    ctx=Load()),
+                args=[
+                    Tuple(
+                        elts=[
+                            Name(id='m', ctx=Load()),
+                            Name(id='n', ctx=Load())],
+                        ctx=Load())],
+                keywords=[])),
+        For(
+            target=Name(id='i', ctx=Store()),
+            iter=Call(
+                func=Name(id='range', ctx=Load()),
+                args=[
+                    Name(id='m', ctx=Load())],
+                keywords=[]),
+            body=[
+                For(
+                    target=Name(id='j', ctx=Store()),
+                    iter=Call(
+                        func=Name(id='range', ctx=Load()),
+                        args=[
+                            Name(id='n', ctx=Load())],
+                        keywords=[]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Subscript(
+                                    value=Subscript(
+                                        value=Name(id='A', ctx=Load()),
+                                        slice=Name(id='i', ctx=Load()),
+                                        ctx=Load()),
+                                    slice=Name(id='j', ctx=Load()),
+                                    ctx=Store())],
+                            value=BinOp(
+                                left=Name(id='i', ctx=Load()),
+                                op=Add(),
+                                right=BinOp(
+                                    left=Constant(value=0.1),
+                                    op=Mult(),
+                                    right=Name(id='j', ctx=Load()))))],
+                    orelse=[])],
+            orelse=[]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='\nArranjo A:')],
+                keywords=[])),
+        For(
+            target=Name(id='i', ctx=Store()),
+            iter=Call(
+                func=Name(id='range', ctx=Load()),
+                args=[
+                    Constant(value=0),
+                    Name(id='m', ctx=Load())],
+                keywords=[]),
+            body=[
+                For(
+                    target=Name(id='j', ctx=Store()),
+                    iter=Call(
+                        func=Name(id='range', ctx=Load()),
+                        args=[
+                            Constant(value=0),
+                            Name(id='n', ctx=Load())],
+                        keywords=[]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            FormattedValue(
+                                                value=Subscript(
+                                                    value=Subscript(
+                                                        value=Name(id='A', ctx=Load()),
+                                                        slice=Name(id='i', ctx=Load()),
+                                                        ctx=Load()),
+                                                    slice=Name(id='j', ctx=Load()),
+                                                    ctx=Load()),
+                                                conversion=-1,
+                                                format_spec=JoinedStr(
+                                                    values=[
+                                                        Constant(value='5.1f')])),
+                                            Constant(value=' ')])],
+                                keywords=[
+                                    keyword(
+                                        arg='end',
+                                        value=Constant(value=''))]))],
+                    orelse=[]),
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[],
+                        keywords=[]))],
+            orelse=[]),
+        Assign(
+            targets=[
+                Name(id='B', ctx=Store())],
+            value=Call(
+                func=Attribute(
+                    value=Name(id='np', ctx=Load()),
+                    attr='zeros',
+                    ctx=Load()),
+                args=[
+                    Tuple(
+                        elts=[
+                            Name(id='m', ctx=Load()),
+                            Name(id='n', ctx=Load())],
+                        ctx=Load())],
+                keywords=[
+                    keyword(
+                        arg='dtype',
+                        value=Name(id='int', ctx=Load()))])),
+        For(
+            target=Name(id='i', ctx=Store()),
+            iter=Call(
+                func=Name(id='range', ctx=Load()),
+                args=[
+                    Name(id='m', ctx=Load())],
+                keywords=[]),
+            body=[
+                For(
+                    target=Name(id='j', ctx=Store()),
+                    iter=Call(
+                        func=Name(id='range', ctx=Load()),
+                        args=[
+                            Name(id='n', ctx=Load())],
+                        keywords=[]),
+                    body=[
+                        If(
+                            test=Compare(
+                                left=Name(id='i', ctx=Load()),
+                                ops=[
+                                    Eq()],
+                                comparators=[
+                                    Name(id='j', ctx=Load())]),
+                            body=[
+                                Assign(
+                                    targets=[
+                                        Subscript(
+                                            value=Subscript(
+                                                value=Name(id='B', ctx=Load()),
+                                                slice=Name(id='i', ctx=Load()),
+                                                ctx=Load()),
+                                            slice=Name(id='j', ctx=Load()),
+                                            ctx=Store())],
+                                    value=Constant(value=0))],
+                            orelse=[
+                                If(
+                                    test=Compare(
+                                        left=Name(id='i', ctx=Load()),
+                                        ops=[
+                                            Lt()],
+                                        comparators=[
+                                            Name(id='j', ctx=Load())]),
+                                    body=[
+                                        Assign(
+                                            targets=[
+                                                Subscript(
+                                                    value=Subscript(
+                                                        value=Name(id='B', ctx=Load()),
+                                                        slice=Name(id='i', ctx=Load()),
+                                                        ctx=Load()),
+                                                    slice=Name(id='j', ctx=Load()),
+                                                    ctx=Store())],
+                                            value=BinOp(
+                                                left=BinOp(
+                                                    left=Constant(value=2),
+                                                    op=Add(),
+                                                    right=Name(id='i', ctx=Load())),
+                                                op=Add(),
+                                                right=Name(id='j', ctx=Load())))],
+                                    orelse=[
+                                        Assign(
+                                            targets=[
+                                                Subscript(
+                                                    value=Subscript(
+                                                        value=Name(id='B', ctx=Load()),
+                                                        slice=Name(id='i', ctx=Load()),
+                                                        ctx=Load()),
+                                                    slice=Name(id='j', ctx=Load()),
+                                                    ctx=Store())],
+                                            value=BinOp(
+                                                left=Name(id='i', ctx=Load()),
+                                                op=Add(),
+                                                right=BinOp(
+                                                    left=Constant(value=2),
+                                                    op=Mult(),
+                                                    right=Name(id='j', ctx=Load()))))])])],
+                    orelse=[])],
+            orelse=[]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='\nArranjo B:')],
+                keywords=[])),
+        For(
+            target=Name(id='i', ctx=Store()),
+            iter=Call(
+                func=Name(id='range', ctx=Load()),
+                args=[
+                    Name(id='m', ctx=Load())],
+                keywords=[]),
+            body=[
+                For(
+                    target=Name(id='j', ctx=Store()),
+                    iter=Call(
+                        func=Name(id='range', ctx=Load()),
+                        args=[
+                            Name(id='n', ctx=Load())],
+                        keywords=[]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            FormattedValue(
+                                                value=Subscript(
+                                                    value=Subscript(
+                                                        value=Name(id='B', ctx=Load()),
+                                                        slice=Name(id='i', ctx=Load()),
+                                                        ctx=Load()),
+                                                    slice=Name(id='j', ctx=Load()),
+                                                    ctx=Load()),
+                                                conversion=-1,
+                                                format_spec=JoinedStr(
+                                                    values=[
+                                                        Constant(value='5d')]))])],
+                                keywords=[
+                                    keyword(
+                                        arg='end',
+                                        value=Constant(value=''))]))],
+                    orelse=[]),
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[],
+                        keywords=[]))],
+            orelse=[])],
+    type_ignores=[])

@@ -1,0 +1,226 @@
+Module(
+    body=[
+        Import(
+            names=[
+                alias(name='random')]),
+        Assign(
+            targets=[
+                Name(id='linf', ctx=Store())],
+            value=Constant(value=1)),
+        Assign(
+            targets=[
+                Name(id='lsup', ctx=Store())],
+            value=Constant(value=100)),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='\nSerá sorteado um número de 1 a 100 e você deverá descobrir qual...!')],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Attribute(
+                    value=Name(id='random', ctx=Load()),
+                    attr='seed',
+                    ctx=Load()),
+                args=[
+                    Constant(value=0)],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='sorteado', ctx=Store())],
+            value=Call(
+                func=Attribute(
+                    value=Name(id='random', ctx=Load()),
+                    attr='randint',
+                    ctx=Load()),
+                args=[
+                    Name(id='linf', ctx=Load()),
+                    Name(id='lsup', ctx=Load())],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='palpites', ctx=Store())],
+            value=Constant(value=0)),
+        While(
+            test=Constant(value=True),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='N', ctx=Store())],
+                    value=Call(
+                        func=Name(id='int', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            Constant(value='Qual é o seu palpite ['),
+                                            FormattedValue(
+                                                value=Name(id='linf', ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=', '),
+                                            FormattedValue(
+                                                value=Name(id='lsup', ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=']? ')])],
+                                keywords=[])],
+                        keywords=[])),
+                While(
+                    test=BoolOp(
+                        op=Or(),
+                        values=[
+                            Compare(
+                                left=Name(id='N', ctx=Load()),
+                                ops=[
+                                    Lt()],
+                                comparators=[
+                                    Name(id='linf', ctx=Load())]),
+                            Compare(
+                                left=Name(id='N', ctx=Load()),
+                                ops=[
+                                    Gt()],
+                                comparators=[
+                                    Name(id='lsup', ctx=Load())])]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    Constant(value='Palpite fora do intervalo')],
+                                keywords=[])),
+                        Assign(
+                            targets=[
+                                Name(id='N', ctx=Store())],
+                            value=Call(
+                                func=Name(id='int', ctx=Load()),
+                                args=[
+                                    Call(
+                                        func=Name(id='input', ctx=Load()),
+                                        args=[
+                                            JoinedStr(
+                                                values=[
+                                                    Constant(value='Qual é o seu palpite ['),
+                                                    FormattedValue(
+                                                        value=Name(id='linf', ctx=Load()),
+                                                        conversion=-1),
+                                                    Constant(value=', '),
+                                                    FormattedValue(
+                                                        value=Name(id='lsup', ctx=Load()),
+                                                        conversion=-1),
+                                                    Constant(value=']? ')])],
+                                        keywords=[])],
+                                keywords=[]))],
+                    orelse=[]),
+                Assign(
+                    targets=[
+                        Name(id='palpites', ctx=Store())],
+                    value=BinOp(
+                        left=Name(id='palpites', ctx=Load()),
+                        op=Add(),
+                        right=Constant(value=1))),
+                If(
+                    test=Compare(
+                        left=Name(id='N', ctx=Load()),
+                        ops=[
+                            Eq()],
+                        comparators=[
+                            Name(id='sorteado', ctx=Load())]),
+                    body=[
+                        Break()],
+                    orelse=[
+                        If(
+                            test=Compare(
+                                left=Name(id='N', ctx=Load()),
+                                ops=[
+                                    Gt()],
+                                comparators=[
+                                    Name(id='sorteado', ctx=Load())]),
+                            body=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            JoinedStr(
+                                                values=[
+                                                    Constant(value='Dica número '),
+                                                    FormattedValue(
+                                                        value=Name(id='palpites', ctx=Load()),
+                                                        conversion=-1),
+                                                    Constant(value=': o número sorteado é menor.')])],
+                                        keywords=[])),
+                                Assign(
+                                    targets=[
+                                        Name(id='lsup', ctx=Store())],
+                                    value=BinOp(
+                                        left=Name(id='N', ctx=Load()),
+                                        op=Sub(),
+                                        right=Constant(value=1)))],
+                            orelse=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            JoinedStr(
+                                                values=[
+                                                    Constant(value='Dica número '),
+                                                    FormattedValue(
+                                                        value=Name(id='palpites', ctx=Load()),
+                                                        conversion=-1),
+                                                    Constant(value=': o número sorteado é maior.')])],
+                                        keywords=[])),
+                                Assign(
+                                    targets=[
+                                        Name(id='linf', ctx=Store())],
+                                    value=BinOp(
+                                        left=Name(id='N', ctx=Load()),
+                                        op=Add(),
+                                        right=Constant(value=1)))])])],
+            orelse=[]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='\nNúmero sorteado: '),
+                            FormattedValue(
+                                value=Name(id='sorteado', ctx=Load()),
+                                conversion=-1)])],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='Número de palpites: '),
+                            FormattedValue(
+                                value=Name(id='palpites', ctx=Load()),
+                                conversion=-1)])],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='resposta', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='Deseja jogar outra vez? (S/N): ')],
+                keywords=[])),
+        If(
+            test=Compare(
+                left=Name(id='resposta', ctx=Load()),
+                ops=[
+                    NotEq()],
+                comparators=[
+                    Constant(value='S')]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            Constant(value='\nObrigado por experimentar o nosso jogo!')],
+                        keywords=[]))],
+            orelse=[])],
+    type_ignores=[])

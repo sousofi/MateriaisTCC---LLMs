@@ -1,0 +1,323 @@
+Module(
+    body=[
+        Import(
+            names=[
+                alias(name='numpy', asname='np')]),
+        Assign(
+            targets=[
+                Name(id='N', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Informe o tamanho do arranjo: ')],
+                        keywords=[])],
+                keywords=[])),
+        While(
+            test=BoolOp(
+                op=Or(),
+                values=[
+                    Compare(
+                        left=Name(id='N', ctx=Load()),
+                        ops=[
+                            Lt()],
+                        comparators=[
+                            Constant(value=15)]),
+                    Compare(
+                        left=Name(id='N', ctx=Load()),
+                        ops=[
+                            Gt()],
+                        comparators=[
+                            Constant(value=25)])]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            Constant(value='O valor deve ser entre 15 e 25')],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='N', ctx=Store())],
+                    value=Call(
+                        func=Name(id='int', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='Informe o tamanho do arranjo: ')],
+                                keywords=[])],
+                        keywords=[]))],
+            orelse=[]),
+        While(
+            test=Constant(value=True),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='semente', ctx=Store())],
+                    value=Call(
+                        func=Name(id='int', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='Informe o valor da semente (>=0): ')],
+                                keywords=[])],
+                        keywords=[])),
+                If(
+                    test=Compare(
+                        left=Name(id='semente', ctx=Load()),
+                        ops=[
+                            GtE()],
+                        comparators=[
+                            Constant(value=0)]),
+                    body=[
+                        Break()],
+                    orelse=[]),
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            Constant(value='Valor não pode ser negativo!')],
+                        keywords=[]))],
+            orelse=[]),
+        Expr(
+            value=Call(
+                func=Attribute(
+                    value=Attribute(
+                        value=Name(id='np', ctx=Load()),
+                        attr='random',
+                        ctx=Load()),
+                    attr='seed',
+                    ctx=Load()),
+                args=[
+                    Name(id='semente', ctx=Load())],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='linf', ctx=Store())],
+            value=Constant(value=1)),
+        Assign(
+            targets=[
+                Name(id='lsup', ctx=Store())],
+            value=Constant(value=100)),
+        Assign(
+            targets=[
+                Name(id='A', ctx=Store())],
+            value=Call(
+                func=Attribute(
+                    value=Attribute(
+                        value=Name(id='np', ctx=Load()),
+                        attr='random',
+                        ctx=Load()),
+                    attr='randint',
+                    ctx=Load()),
+                args=[
+                    Name(id='linf', ctx=Load()),
+                    BinOp(
+                        left=Name(id='lsup', ctx=Load()),
+                        op=Add(),
+                        right=Constant(value=1)),
+                    Name(id='N', ctx=Load())],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='\nArranjo A = [')],
+                keywords=[
+                    keyword(
+                        arg='end',
+                        value=Constant(value=''))])),
+        For(
+            target=Name(id='i', ctx=Store()),
+            iter=Call(
+                func=Name(id='range', ctx=Load()),
+                args=[
+                    Constant(value=0),
+                    BinOp(
+                        left=Call(
+                            func=Name(id='len', ctx=Load()),
+                            args=[
+                                Name(id='A', ctx=Load())],
+                            keywords=[]),
+                        op=Sub(),
+                        right=Constant(value=1))],
+                keywords=[]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            JoinedStr(
+                                values=[
+                                    FormattedValue(
+                                        value=Subscript(
+                                            value=Name(id='A', ctx=Load()),
+                                            slice=Name(id='i', ctx=Load()),
+                                            ctx=Load()),
+                                        conversion=-1),
+                                    Constant(value=', ')])],
+                        keywords=[
+                            keyword(
+                                arg='end',
+                                value=Constant(value=''))]))],
+            orelse=[]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            FormattedValue(
+                                value=Subscript(
+                                    value=Name(id='A', ctx=Load()),
+                                    slice=BinOp(
+                                        left=Name(id='N', ctx=Load()),
+                                        op=Sub(),
+                                        right=Constant(value=1)),
+                                    ctx=Load()),
+                                conversion=-1),
+                            Constant(value=']')])],
+                keywords=[])),
+        For(
+            target=Name(id='i', ctx=Store()),
+            iter=Call(
+                func=Name(id='range', ctx=Load()),
+                args=[
+                    BinOp(
+                        left=Call(
+                            func=Name(id='len', ctx=Load()),
+                            args=[
+                                Name(id='A', ctx=Load())],
+                            keywords=[]),
+                        op=Sub(),
+                        right=Constant(value=1))],
+                keywords=[]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='posicao_menor', ctx=Store())],
+                    value=Name(id='i', ctx=Load())),
+                For(
+                    target=Name(id='j', ctx=Store()),
+                    iter=Call(
+                        func=Name(id='range', ctx=Load()),
+                        args=[
+                            BinOp(
+                                left=Name(id='i', ctx=Load()),
+                                op=Add(),
+                                right=Constant(value=1)),
+                            Call(
+                                func=Name(id='len', ctx=Load()),
+                                args=[
+                                    Name(id='A', ctx=Load())],
+                                keywords=[])],
+                        keywords=[]),
+                    body=[
+                        If(
+                            test=Compare(
+                                left=Subscript(
+                                    value=Name(id='A', ctx=Load()),
+                                    slice=Name(id='i', ctx=Load()),
+                                    ctx=Load()),
+                                ops=[
+                                    Lt()],
+                                comparators=[
+                                    Subscript(
+                                        value=Name(id='A', ctx=Load()),
+                                        slice=Name(id='posicao_menor', ctx=Load()),
+                                        ctx=Load())]),
+                            body=[
+                                Assign(
+                                    targets=[
+                                        Name(id='posicao_menor', ctx=Store())],
+                                    value=Name(id='i', ctx=Load()))],
+                            orelse=[])],
+                    orelse=[]),
+                Assign(
+                    targets=[
+                        Tuple(
+                            elts=[
+                                Subscript(
+                                    value=Name(id='A', ctx=Load()),
+                                    slice=Name(id='i', ctx=Load()),
+                                    ctx=Store()),
+                                Subscript(
+                                    value=Name(id='A', ctx=Load()),
+                                    slice=Name(id='posicao_menor', ctx=Load()),
+                                    ctx=Store())],
+                            ctx=Store())],
+                    value=Tuple(
+                        elts=[
+                            Subscript(
+                                value=Name(id='A', ctx=Load()),
+                                slice=Name(id='posicao_menor', ctx=Load()),
+                                ctx=Load()),
+                            Subscript(
+                                value=Name(id='A', ctx=Load()),
+                                slice=Name(id='i', ctx=Load()),
+                                ctx=Load())],
+                        ctx=Load()))],
+            orelse=[]),
+        If(
+            test=Compare(
+                left=BinOp(
+                    left=Name(id='N', ctx=Load()),
+                    op=Mod(),
+                    right=Constant(value=2)),
+                ops=[
+                    Eq()],
+                comparators=[
+                    Constant(value=1)]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='mediana', ctx=Store())],
+                    value=Subscript(
+                        value=Name(id='A', ctx=Load()),
+                        slice=BinOp(
+                            left=Name(id='N', ctx=Load()),
+                            op=FloorDiv(),
+                            right=Constant(value=2)),
+                        ctx=Load()))],
+            orelse=[
+                Assign(
+                    targets=[
+                        Name(id='mediana', ctx=Store())],
+                    value=BinOp(
+                        left=BinOp(
+                            left=Subscript(
+                                value=Name(id='A', ctx=Load()),
+                                slice=BinOp(
+                                    left=BinOp(
+                                        left=Name(id='N', ctx=Load()),
+                                        op=FloorDiv(),
+                                        right=Constant(value=2)),
+                                    op=Sub(),
+                                    right=Constant(value=1)),
+                                ctx=Load()),
+                            op=Add(),
+                            right=Subscript(
+                                value=Name(id='A', ctx=Load()),
+                                slice=BinOp(
+                                    left=Name(id='N', ctx=Load()),
+                                    op=FloorDiv(),
+                                    right=Constant(value=2)),
+                                ctx=Load())),
+                        op=Div(),
+                        right=Constant(value=2)))]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='\nO valor da mediana é: '),
+                            FormattedValue(
+                                value=Name(id='mediana', ctx=Load()),
+                                conversion=-1)])],
+                keywords=[]))],
+    type_ignores=[])

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\TCC\pipeline\files\code8-1-ast.py", line 64, in <module>
+    print(ast.dump(ast.parse(code), indent=4))
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python312\Lib\ast.py", line 52, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<unknown>", line 53
+    print(f"O Valor da mediana �: {mediana}")
+    ^
+IndentationError: expected an indented block after 'else' statement on line 51

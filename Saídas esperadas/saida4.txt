@@ -1,0 +1,27 @@
+Exemplos de saída
+
+Nome: Pedro Silva
+Idade atual: 16
+
+Pedro Silva, você pode jogar o campeonato pela idade: 16 anos
+---------------------------------------------------------------
+
+Nome: Paula Santos
+Idade atual: 12
+Tempo de Escolinha (TE): 5
+
+Paula Santos, você pode jogar o campeonato pelo TE: 5 anos.
+----------------------------------------------------------------
+
+Nome: Diego Amaral
+Idade atual: 14
+Tempo de Escolinha (TE): 4
+
+Diego Amaral, você pode jogar o campeonato pela soma (idade+TE): 18 anos.
+-------------------------------------------------------------------
+
+Nome: Luiza Fontes
+Idade atual: 15
+Tempo de Escolinha (TE): 2
+
+Luiza Fontes, você ainda não pode jogar o campeonato!

@@ -1,0 +1,119 @@
+Module(
+    body=[
+        Assign(
+            targets=[
+                Name(id='anoAtual', ctx=Store())],
+            value=Constant(value=2025)),
+        Assign(
+            targets=[
+                Name(id='nome', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='\nQual o seu nome?')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='ano', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Em que ano você nasceu?')],
+                        keywords=[])],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='curso', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='Qual o seu curso?')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='anoInicioDoCurso', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Em que ano você iniciou seu curso?')],
+                        keywords=[])],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='idade', ctx=Store())],
+            value=BinOp(
+                left=Name(id='anoAtual', ctx=Load()),
+                op=Sub(),
+                right=Name(id='ano', ctx=Load()))),
+        Assign(
+            targets=[
+                Name(id='periodo', ctx=Store())],
+            value=BinOp(
+                left=BinOp(
+                    left=BinOp(
+                        left=Name(id='anoAtual', ctx=Load()),
+                        op=Sub(),
+                        right=Name(id='anoInicioDoCurso', ctx=Load())),
+                    op=Mult(),
+                    right=Constant(value=2)),
+                op=Add(),
+                right=Constant(value=2))),
+        Assign(
+            targets=[
+                Name(id='idadeDeEntradaNoCurso', ctx=Store())],
+            value=BinOp(
+                left=Name(id='anoInicioDoCurso', ctx=Load()),
+                op=Sub(),
+                right=Name(id='anoAtual', ctx=Load()))),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='\n'),
+                            FormattedValue(
+                                value=Name(id='nome', ctx=Load()),
+                                conversion=-1),
+                            Constant(value=', você está no '),
+                            FormattedValue(
+                                value=Name(id='periodo', ctx=Load()),
+                                conversion=-1),
+                            Constant(value='° periodo de '),
+                            FormattedValue(
+                                value=Name(id='curso', ctx=Load()),
+                                conversion=-1),
+                            Constant(value='.\nVocê tem '),
+                            FormattedValue(
+                                value=BinOp(
+                                    left=Name(id='idade', ctx=Load()),
+                                    op=Sub(),
+                                    right=Constant(value=1)),
+                                conversion=-1),
+                            Constant(value=' ou '),
+                            FormattedValue(
+                                value=Name(id='idade', ctx=Load()),
+                                conversion=-1),
+                            Constant(value='.\nE entrou na UFV com '),
+                            FormattedValue(
+                                value=BinOp(
+                                    left=Name(id='idadeDeEntradaNoCurso', ctx=Load()),
+                                    op=Sub(),
+                                    right=Constant(value=1)),
+                                conversion=-1),
+                            Constant(value=' ou '),
+                            FormattedValue(
+                                value=BinOp(
+                                    left=Name(id='anoInicioDoCurso', ctx=Load()),
+                                    op=Sub(),
+                                    right=Name(id='ano', ctx=Load())),
+                                conversion=-1),
+                            Constant(value='.')])],
+                keywords=[]))],
+    type_ignores=[])

@@ -1,0 +1,25 @@
+Exemplo de saída
+
+Será sorteado um número de 1 a 100 e você deverá descobrir qual...!
+Qual é o seu palpite [1, 100]? 0
+Palpite fora do intervalo [1, 100]
+Qual é o seu palpite [1, 100]? 10
+Dica 1: o número sorteado é maior que 10.
+Qual é o seu palpite [11, 100]? 9
+Palpite fora do intervalo [11, 100]
+Qual é o seu palpite [11, 100]? 90
+Dica 2: o número sorteado é menor que 90.
+Qual é o seu palpite [11, 89]? 50
+
+Número sorteado: 50
+Você acertou na 3a tentativa
+Deseja jogar outra vez? (S/N): s
+
+Novo número entre 1 a 100 foi sorteado e você deverá descobrir qual...!
+Qual é o seu palpite [1, 100]? 98
+
+Número sorteado: 98
+Você acertou na 1a tentativa
+Deseja jogar outra vez? (S/N): n
+
+Obrigado por experimentar o nosso jogo!

@@ -1,0 +1,260 @@
+Module(
+    body=[
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='Programa para cálculo das raízes de equação do 2o grau')],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='cuja fórmula geral é dada por: ax² + bx + c')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='i', ctx=Store())],
+            value=Constant(value='S')),
+        While(
+            test=Compare(
+                left=Name(id='i', ctx=Load()),
+                ops=[
+                    Eq()],
+                comparators=[
+                    Constant(value='S')]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            Constant(value='Informe os valores dos coeficientes da equação')],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='a', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='a = ')],
+                                keywords=[])],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='b', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='b = ')],
+                                keywords=[])],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='c', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='c = ')],
+                                keywords=[])],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='delta', ctx=Store())],
+                    value=BinOp(
+                        left=BinOp(
+                            left=Name(id='b', ctx=Load()),
+                            op=Pow(),
+                            right=Constant(value=2)),
+                        op=Sub(),
+                        right=BinOp(
+                            left=BinOp(
+                                left=Constant(value=4),
+                                op=Mult(),
+                                right=Name(id='a', ctx=Load())),
+                            op=Mult(),
+                            right=Name(id='c', ctx=Load())))),
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            JoinedStr(
+                                values=[
+                                    Constant(value='\nA equação '),
+                                    FormattedValue(
+                                        value=Name(id='a', ctx=Load()),
+                                        conversion=-1,
+                                        format_spec=JoinedStr(
+                                            values=[
+                                                Constant(value='.3f')])),
+                                    Constant(value='x² + '),
+                                    FormattedValue(
+                                        value=Name(id='b', ctx=Load()),
+                                        conversion=-1,
+                                        format_spec=JoinedStr(
+                                            values=[
+                                                Constant(value='.3f')])),
+                                    Constant(value='x + '),
+                                    FormattedValue(
+                                        value=Name(id='c', ctx=Load()),
+                                        conversion=-1,
+                                        format_spec=JoinedStr(
+                                            values=[
+                                                Constant(value='.3f')])),
+                                    Constant(value=' = 0, ')])],
+                        keywords=[
+                            keyword(
+                                arg='end',
+                                value=Constant(value=''))])),
+                If(
+                    test=Compare(
+                        left=Name(id='a', ctx=Load()),
+                        ops=[
+                            Eq()],
+                        comparators=[
+                            Constant(value=0)]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    Constant(value='não é uma de 2⁰ grau, pois o coeficiente a = 0')],
+                                keywords=[]))],
+                    orelse=[
+                        If(
+                            test=Compare(
+                                left=Name(id='delta', ctx=Load()),
+                                ops=[
+                                    Lt()],
+                                comparators=[
+                                    Constant(value=0)]),
+                            body=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            Constant(value='não possui raízes reais')],
+                                        keywords=[]))],
+                            orelse=[
+                                If(
+                                    test=Compare(
+                                        left=Name(id='delta', ctx=Load()),
+                                        ops=[
+                                            Eq()],
+                                        comparators=[
+                                            Constant(value=0)]),
+                                    body=[
+                                        Assign(
+                                            targets=[
+                                                Name(id='x1', ctx=Store())],
+                                            value=BinOp(
+                                                left=BinOp(
+                                                    left=UnaryOp(
+                                                        op=USub(),
+                                                        operand=Name(id='b', ctx=Load())),
+                                                    op=Sub(),
+                                                    right=BinOp(
+                                                        left=Name(id='delta', ctx=Load()),
+                                                        op=Pow(),
+                                                        right=Constant(value=0.5))),
+                                                op=Div(),
+                                                right=BinOp(
+                                                    left=Constant(value=2),
+                                                    op=Mult(),
+                                                    right=Name(id='a', ctx=Load())))),
+                                        Expr(
+                                            value=Call(
+                                                func=Name(id='print', ctx=Load()),
+                                                args=[
+                                                    JoinedStr(
+                                                        values=[
+                                                            Constant(value='possui uma única raiz real: '),
+                                                            FormattedValue(
+                                                                value=Name(id='x1', ctx=Load()),
+                                                                conversion=-1,
+                                                                format_spec=JoinedStr(
+                                                                    values=[
+                                                                        Constant(value='.3f')]))])],
+                                                keywords=[]))],
+                                    orelse=[
+                                        Assign(
+                                            targets=[
+                                                Name(id='x1', ctx=Store())],
+                                            value=BinOp(
+                                                left=BinOp(
+                                                    left=UnaryOp(
+                                                        op=USub(),
+                                                        operand=Name(id='b', ctx=Load())),
+                                                    op=Sub(),
+                                                    right=BinOp(
+                                                        left=Name(id='delta', ctx=Load()),
+                                                        op=Pow(),
+                                                        right=Constant(value=0.5))),
+                                                op=Div(),
+                                                right=BinOp(
+                                                    left=Constant(value=2),
+                                                    op=Mult(),
+                                                    right=Name(id='a', ctx=Load())))),
+                                        Assign(
+                                            targets=[
+                                                Name(id='x2', ctx=Store())],
+                                            value=BinOp(
+                                                left=BinOp(
+                                                    left=UnaryOp(
+                                                        op=USub(),
+                                                        operand=Name(id='b', ctx=Load())),
+                                                    op=Add(),
+                                                    right=BinOp(
+                                                        left=Name(id='delta', ctx=Load()),
+                                                        op=Pow(),
+                                                        right=Constant(value=0.5))),
+                                                op=Div(),
+                                                right=BinOp(
+                                                    left=Constant(value=2),
+                                                    op=Mult(),
+                                                    right=Name(id='a', ctx=Load())))),
+                                        Expr(
+                                            value=Call(
+                                                func=Name(id='print', ctx=Load()),
+                                                args=[
+                                                    JoinedStr(
+                                                        values=[
+                                                            Constant(value='possui duas raízes reais '),
+                                                            FormattedValue(
+                                                                value=Name(id='x1', ctx=Load()),
+                                                                conversion=-1,
+                                                                format_spec=JoinedStr(
+                                                                    values=[
+                                                                        Constant(value='.3f')])),
+                                                            Constant(value=' e '),
+                                                            FormattedValue(
+                                                                value=Name(id='x2', ctx=Load()),
+                                                                conversion=-1,
+                                                                format_spec=JoinedStr(
+                                                                    values=[
+                                                                        Constant(value='.3f')]))])],
+                                                keywords=[]))])])]),
+                Assign(
+                    targets=[
+                        Name(id='i', ctx=Store())],
+                    value=Call(
+                        func=Attribute(
+                            value=Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='Deseja executar novamente? (S/N): ')],
+                                keywords=[]),
+                            attr='upper',
+                            ctx=Load()),
+                        args=[],
+                        keywords=[]))],
+            orelse=[])],
+    type_ignores=[])

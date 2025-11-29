@@ -1,0 +1,67 @@
+Exemplo de saída para as 8 possibilidades
+
+--------------------------------------------------------------
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Alice
+Idade: 3
+
+Alice, seu ingresso custa R$ 0.00. Tipo: SEM ACESSO.
+--------------------------------------------------------------
+
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Pedro
+Idade: 4
+Altura (em metros): 1.25
+
+Pedro, seu ingresso custa R$ 67.50. Tipo: ACESSO RESTRITO.
+--------------------------------------------------------------
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Vitor
+Idade: 12
+Altura (em metros): 1.58
+
+Vitor, seu ingresso custa R$ 75.00. Tipo: ACESSO TOTAL.
+--------------------------------------------------------------
+
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Vânia
+Idade: 13
+Altura (em metros): 1.21
+
+Vânia, seu ingresso custa R$ 76.50. Tipo: ACESSO RESTRITO.
+---------------------------------------------------------------
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Paula
+Idade: 17
+Altura (em metros): 1.75
+
+Paula, seu ingresso custa R$ 85.00. Tipo: ACESSO TOTAL.
+---------------------------------------------------------------
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Cláudia
+Idade: 18
+Altura (em metros): 1.49
+
+Cláudia, seu ingresso custa R$ 103.50. Tipo: ACESSO RESTRITO.
+--------------------------------------------------------------------
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Guilherme
+Idade: 64
+Altura (em metros): 1.50
+
+Guilherme, seu ingresso custa R$ 115.00. Tipo: ACESSO TOTAL.
+-----------------------------------------------------------------
+
+Bem-vindo à Central de Ingressos do Play Center
+Nome: Marcelo
+Idade: 65
+
+Marcelo, seu ingresso custa R$ 0.00. Tipo: SEM ACESSO.
+-----------------------------------------------------------------

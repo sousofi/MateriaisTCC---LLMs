@@ -1,0 +1,124 @@
+Module(
+    body=[
+        Assign(
+            targets=[
+                Name(id='nome', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='Digite seu nome:')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='idade', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Digite: sua idade atual:')],
+                        keywords=[])],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='tempo', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Digite quanto tempo de  escolinha você tem:')],
+                        keywords=[])],
+                keywords=[])),
+        If(
+            test=Compare(
+                left=Name(id='idade', ctx=Load()),
+                ops=[
+                    GtE()],
+                comparators=[
+                    Constant(value=16)]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            JoinedStr(
+                                values=[
+                                    FormattedValue(
+                                        value=Name(id='nome', ctx=Load()),
+                                        conversion=-1),
+                                    Constant(value=' você pode jogar o campeonato pela idade '),
+                                    FormattedValue(
+                                        value=Name(id='idade', ctx=Load()),
+                                        conversion=-1),
+                                    Constant(value=' anos!')])],
+                        keywords=[]))],
+            orelse=[
+                If(
+                    test=Compare(
+                        left=Name(id='tempo', ctx=Load()),
+                        ops=[
+                            GtE()],
+                        comparators=[
+                            Constant(value=5)]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            FormattedValue(
+                                                value=Name(id='nome', ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=' você pode jogar o campeonato pelo tempo de escola '),
+                                            FormattedValue(
+                                                value=Name(id='tempo', ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=' anos!')])],
+                                keywords=[]))],
+                    orelse=[
+                        If(
+                            test=Compare(
+                                left=BinOp(
+                                    left=Name(id='tempo', ctx=Load()),
+                                    op=Add(),
+                                    right=Name(id='idade', ctx=Load())),
+                                ops=[
+                                    Gt()],
+                                comparators=[
+                                    Constant(value=18)]),
+                            body=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            JoinedStr(
+                                                values=[
+                                                    FormattedValue(
+                                                        value=Name(id='nome', ctx=Load()),
+                                                        conversion=-1),
+                                                    Constant(value=' você pode jogar o campeonato pela soma '),
+                                                    FormattedValue(
+                                                        value=BinOp(
+                                                            left=Name(id='tempo', ctx=Load()),
+                                                            op=Add(),
+                                                            right=Name(id='idade', ctx=Load())),
+                                                        conversion=-1),
+                                                    Constant(value=' anos!')])],
+                                        keywords=[]))],
+                            orelse=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            JoinedStr(
+                                                values=[
+                                                    FormattedValue(
+                                                        value=Name(id='nome', ctx=Load()),
+                                                        conversion=-1),
+                                                    Constant(value=' você ainda não pode jogar o campeonato!')])],
+                                        keywords=[]))])])])],
+    type_ignores=[])

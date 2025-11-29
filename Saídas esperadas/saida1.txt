@@ -1,0 +1,9 @@
+
+Qual o seu nome? Maria Souza
+Em que ano você nasceu? 2001
+Qual o seu curso? Matemática
+Em que ano você iniciou seu curso? 2024
+
+Maria Souza, você está no 4º período de Matemática.
+Você tem 23 ou 24 anos
+E entrou na UFV com 22 ou 23 anos.

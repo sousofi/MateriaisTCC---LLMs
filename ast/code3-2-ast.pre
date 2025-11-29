@@ -1,0 +1,173 @@
+Module(
+    body=[
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='\nBem-vindo à Central de Ingressos do Play Center')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='nome', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='Nome: ')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='idade', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Idade: ')],
+                        keywords=[])],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='tipo', ctx=Store())],
+            value=Constant(value='SEM ACESSO')),
+        Assign(
+            targets=[
+                Name(id='valor', ctx=Store())],
+            value=Constant(value=0)),
+        If(
+            test=BoolOp(
+                op=And(),
+                values=[
+                    Compare(
+                        left=Name(id='idade', ctx=Load()),
+                        ops=[
+                            GtE()],
+                        comparators=[
+                            Constant(value=4)]),
+                    Compare(
+                        left=Name(id='idade', ctx=Load()),
+                        ops=[
+                            LtE()],
+                        comparators=[
+                            Constant(value=12)])]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='valor', ctx=Store())],
+                    value=Constant(value=75.0))],
+            orelse=[
+                If(
+                    test=BoolOp(
+                        op=And(),
+                        values=[
+                            Compare(
+                                left=Name(id='idade', ctx=Load()),
+                                ops=[
+                                    GtE()],
+                                comparators=[
+                                    Constant(value=13)]),
+                            Compare(
+                                left=Name(id='idade', ctx=Load()),
+                                ops=[
+                                    LtE()],
+                                comparators=[
+                                    Constant(value=17)])]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Name(id='valor', ctx=Store())],
+                            value=Constant(value=85.0))],
+                    orelse=[
+                        If(
+                            test=BoolOp(
+                                op=And(),
+                                values=[
+                                    Compare(
+                                        left=Name(id='idade', ctx=Load()),
+                                        ops=[
+                                            GtE()],
+                                        comparators=[
+                                            Constant(value=18)]),
+                                    Compare(
+                                        left=Name(id='idade', ctx=Load()),
+                                        ops=[
+                                            LtE()],
+                                        comparators=[
+                                            Constant(value=65)])]),
+                            body=[
+                                Assign(
+                                    targets=[
+                                        Name(id='valor', ctx=Store())],
+                                    value=Constant(value=115.0))],
+                            orelse=[
+                                Assign(
+                                    targets=[
+                                        Name(id='valor', ctx=Store())],
+                                    value=Constant(value=0))])])]),
+        If(
+            test=Compare(
+                left=Name(id='idade', ctx=Load()),
+                ops=[
+                    LtE()],
+                comparators=[
+                    Constant(value=64)]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='altura', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value=' Altura (em metros):')],
+                                keywords=[])],
+                        keywords=[])),
+                If(
+                    test=Compare(
+                        left=Name(id='altura', ctx=Load()),
+                        ops=[
+                            Lt()],
+                        comparators=[
+                            Constant(value=1.5)]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Name(id='valor', ctx=Store())],
+                            value=BinOp(
+                                left=Name(id='valor', ctx=Load()),
+                                op=Mult(),
+                                right=Constant(value=0.9))),
+                        Assign(
+                            targets=[
+                                Name(id='tipo', ctx=Store())],
+                            value=Constant(value='ACESSO RESTRITO'))],
+                    orelse=[
+                        Assign(
+                            targets=[
+                                Name(id='tipo', ctx=Store())],
+                            value=Constant(value='ACESSO TOTAL'))])],
+            orelse=[]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            FormattedValue(
+                                value=Name(id='nome', ctx=Load()),
+                                conversion=-1),
+                            Constant(value=', seu ingresso custa R$ '),
+                            FormattedValue(
+                                value=Name(id='valor', ctx=Load()),
+                                conversion=-1,
+                                format_spec=JoinedStr(
+                                    values=[
+                                        Constant(value='.2f')])),
+                            Constant(value=' Tipo: '),
+                            FormattedValue(
+                                value=Name(id='tipo', ctx=Load()),
+                                conversion=-1)])],
+                keywords=[]))],
+    type_ignores=[])

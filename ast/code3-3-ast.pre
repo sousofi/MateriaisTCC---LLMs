@@ -1,0 +1,100 @@
+Module(
+    body=[
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='\nBem-vindo à Central de Ingressos do Play Center')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='nome', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='Nome: ')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='idade', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Idade: ')],
+                        keywords=[])],
+                keywords=[])),
+        If(
+            test=BoolOp(
+                op=Or(),
+                values=[
+                    Compare(
+                        left=Name(id='idade', ctx=Load()),
+                        ops=[
+                            Lt()],
+                        comparators=[
+                            Constant(value=4)]),
+                    Compare(
+                        left=Name(id='idade', ctx=Load()),
+                        ops=[
+                            GtE()],
+                        comparators=[
+                            Constant(value=65)])]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='valor', ctx=Store())],
+                    value=Constant(value=0))],
+            orelse=[
+                If(
+                    test=Compare(
+                        left=Name(id='idade', ctx=Load()),
+                        ops=[
+                            Lt()],
+                        comparators=[
+                            Constant(value=13)]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Name(id='valor', ctx=Store())],
+                            value=Constant(value=75))],
+                    orelse=[
+                        If(
+                            test=Compare(
+                                left=Name(id='idade', ctx=Load()),
+                                ops=[
+                                    Lt()],
+                                comparators=[
+                                    Constant(value=18)]),
+                            body=[
+                                Assign(
+                                    targets=[
+                                        Name(id='valor', ctx=Store())],
+                                    value=Constant(value=85))],
+                            orelse=[
+                                Assign(
+                                    targets=[
+                                        Name(id='valor', ctx=Store())],
+                                    value=Constant(value=115))])])]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='\n'),
+                            FormattedValue(
+                                value=Name(id='nome', ctx=Load()),
+                                conversion=-1),
+                            Constant(value=', seu ingresso custa R$ '),
+                            FormattedValue(
+                                value=Name(id='valor', ctx=Load()),
+                                conversion=-1,
+                                format_spec=JoinedStr(
+                                    values=[
+                                        Constant(value='.2f')])),
+                            Constant(value='.')])],
+                keywords=[]))],
+    type_ignores=[])

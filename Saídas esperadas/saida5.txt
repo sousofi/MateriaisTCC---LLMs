@@ -1,0 +1,27 @@
+Exemplos de saída
+
+Programa para cálculo das raízes de equação do 2o grau
+cuja fórmula geral é dada por: ax² + bx + c
+Informe os valores dos coeficientes da equação
+a = 1.0
+b = 2.0
+c = 1.0
+
+A equação 1.000x² + 2.000x + 1.000 = 0, possui uma única raiz real: -1.000      
+Deseja executar novamente? (S/N): S
+
+Informe os valores dos coeficientes da equação
+a = 1
+b = 4
+c = 1.5
+
+A equação 1.000x² + 4.000x + 1.500 = 0, possui duas raízes reais -3.581 e -0.419
+Deseja executar novamente? (S/N): s
+
+Informe os valores dos coeficientes da equação
+a = 2.0
+b = 1.0
+c = 4.0
+
+A equação 2.000x² + 1.000x + 4.000 = 0, não possui raízes reais
+Deseja executar novamente? (S/N): n

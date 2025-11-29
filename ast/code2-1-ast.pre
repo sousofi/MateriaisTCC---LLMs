@@ -1,0 +1,177 @@
+Module(
+    body=[
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='Este programa calcula a área e o perímetro de figuras regulares')],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='Escolha o tipo de figura (1 ou 2): ')],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='   Digite 1 para CÍRCULO')],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    Constant(value='   Digite outro valor para RETÂNGULO')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='opcao', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='Digite a sua opção: ')],
+                        keywords=[])],
+                keywords=[])),
+        If(
+            test=Compare(
+                left=Name(id='opcao', ctx=Load()),
+                ops=[
+                    Eq()],
+                comparators=[
+                    Constant(value=1)]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='figura', ctx=Store())],
+                    value=Constant(value='Círculo')),
+                Assign(
+                    targets=[
+                        Name(id='PI', ctx=Store())],
+                    value=Constant(value=3.14159)),
+                Assign(
+                    targets=[
+                        Name(id='raio', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='Informe o raio do círculo (cm): ')],
+                                keywords=[])],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='area', ctx=Store())],
+                    value=BinOp(
+                        left=Name(id='PI', ctx=Load()),
+                        op=Mult(),
+                        right=BinOp(
+                            left=Name(id='raio', ctx=Load()),
+                            op=Pow(),
+                            right=Constant(value=2)))),
+                Assign(
+                    targets=[
+                        Name(id='perimetro', ctx=Store())],
+                    value=BinOp(
+                        left=BinOp(
+                            left=Constant(value=2),
+                            op=Mult(),
+                            right=Name(id='PI', ctx=Load())),
+                        op=Mult(),
+                        right=Name(id='raio', ctx=Load())))],
+            orelse=[
+                Assign(
+                    targets=[
+                        Name(id='figura', ctx=Store())],
+                    value=Constant(value='Retângulo')),
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            Constant(value='Informe as dimensões retângulo (cm)')],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='base', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='base = ')],
+                                keywords=[])],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='altura', ctx=Store())],
+                    value=Call(
+                        func=Name(id='float', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='altura = ')],
+                                keywords=[])],
+                        keywords=[])),
+                Assign(
+                    targets=[
+                        Name(id='area', ctx=Store())],
+                    value=BinOp(
+                        left=Name(id='base', ctx=Load()),
+                        op=Mult(),
+                        right=Name(id='altura', ctx=Load()))),
+                Assign(
+                    targets=[
+                        Name(id='perimetro', ctx=Store())],
+                    value=BinOp(
+                        left=Constant(value=2),
+                        op=Mult(),
+                        right=BinOp(
+                            left=Name(id='base', ctx=Load()),
+                            op=Add(),
+                            right=Name(id='altura', ctx=Load()))))]),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='\nA área da '),
+                            FormattedValue(
+                                value=Name(id='figura', ctx=Load()),
+                                conversion=-1),
+                            Constant(value=' é: '),
+                            FormattedValue(
+                                value=Name(id='area', ctx=Load()),
+                                conversion=-1,
+                                format_spec=JoinedStr(
+                                    values=[
+                                        Constant(value='.2f')])),
+                            Constant(value=' cm².')])],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Name(id='print', ctx=Load()),
+                args=[
+                    JoinedStr(
+                        values=[
+                            Constant(value='O perímetro da '),
+                            FormattedValue(
+                                value=Name(id='figura', ctx=Load()),
+                                conversion=-1),
+                            Constant(value=' é: '),
+                            FormattedValue(
+                                value=Name(id='perimetro', ctx=Load()),
+                                conversion=-1,
+                                format_spec=JoinedStr(
+                                    values=[
+                                        Constant(value='.2f')])),
+                            Constant(value=' cm.')])],
+                keywords=[]))],
+    type_ignores=[])

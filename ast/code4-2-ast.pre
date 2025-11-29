@@ -1,0 +1,124 @@
+Module(
+    body=[
+        Assign(
+            targets=[
+                Name(id='nome', ctx=Store())],
+            value=Call(
+                func=Name(id='input', ctx=Load()),
+                args=[
+                    Constant(value='nome: ')],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='idade', ctx=Store())],
+            value=Call(
+                func=Name(id='int', ctx=Load()),
+                args=[
+                    Call(
+                        func=Name(id='input', ctx=Load()),
+                        args=[
+                            Constant(value='idade: ')],
+                        keywords=[])],
+                keywords=[])),
+        Assign(
+            targets=[
+                Name(id='soma', ctx=Store())],
+            value=Constant(value=0)),
+        If(
+            test=Compare(
+                left=Name(id='idade', ctx=Load()),
+                ops=[
+                    GtE()],
+                comparators=[
+                    Constant(value=16)]),
+            body=[
+                Expr(
+                    value=Call(
+                        func=Name(id='print', ctx=Load()),
+                        args=[
+                            BinOp(
+                                left=Constant(value='\n%s, você pode jogar o campeonato pela idade: %d anos'),
+                                op=Mod(),
+                                right=Tuple(
+                                    elts=[
+                                        Name(id='nome', ctx=Load()),
+                                        Name(id='idade', ctx=Load())],
+                                    ctx=Load()))],
+                        keywords=[]))],
+            orelse=[
+                Assign(
+                    targets=[
+                        Name(id='tempo_escolinha', ctx=Store())],
+                    value=Call(
+                        func=Name(id='int', ctx=Load()),
+                        args=[
+                            Call(
+                                func=Name(id='input', ctx=Load()),
+                                args=[
+                                    Constant(value='tempo de escolinha: ')],
+                                keywords=[])],
+                        keywords=[])),
+                If(
+                    test=Compare(
+                        left=Name(id='tempo_escolinha', ctx=Load()),
+                        ops=[
+                            GtE()],
+                        comparators=[
+                            Constant(value=5)]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    BinOp(
+                                        left=Constant(value='\n%s, você pode jogar o campeonato pelo TE: %d anos.'),
+                                        op=Mod(),
+                                        right=Tuple(
+                                            elts=[
+                                                Name(id='nome', ctx=Load()),
+                                                Name(id='tempo_escolinha', ctx=Load())],
+                                            ctx=Load()))],
+                                keywords=[])),
+                        Assign(
+                            targets=[
+                                Name(id='soma', ctx=Store())],
+                            value=BinOp(
+                                left=Name(id='tempo_escolinha', ctx=Load()),
+                                op=Add(),
+                                right=Name(id='idade', ctx=Load())))],
+                    orelse=[
+                        If(
+                            test=Compare(
+                                left=Name(id='soma', ctx=Load()),
+                                ops=[
+                                    GtE()],
+                                comparators=[
+                                    Constant(value=18)]),
+                            body=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            BinOp(
+                                                left=Constant(value='\n%s, você pode jogar o campeonato pela soma (idade+TE): %d anos.'),
+                                                op=Mod(),
+                                                right=Tuple(
+                                                    elts=[
+                                                        Name(id='nome', ctx=Load()),
+                                                        BinOp(
+                                                            left=Name(id='idade', ctx=Load()),
+                                                            op=Add(),
+                                                            right=Name(id='tempo_escolinha', ctx=Load()))],
+                                                    ctx=Load()))],
+                                        keywords=[]))],
+                            orelse=[
+                                Expr(
+                                    value=Call(
+                                        func=Name(id='print', ctx=Load()),
+                                        args=[
+                                            BinOp(
+                                                left=Constant(value='\n%s, você ainda não pode jogar o campeonato!'),
+                                                op=Mod(),
+                                                right=Name(id='nome', ctx=Load()))],
+                                        keywords=[]))])])])],
+    type_ignores=[])

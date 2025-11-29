@@ -1,0 +1,9 @@
+Exemplo de saída
+
+Informe o valor da semente: -1
+O valor da semente deve ser >= 0
+Informe o valor da semente: 1
+
+Arranjo = [ 5 8 9 5 0 0 1 7 6 9 2 4 5 2 4 2 4 7 7 9 1 7 0 6 9 ]
+Média inteira: 4
+Existem 14 valores maiores que a média inteira.
