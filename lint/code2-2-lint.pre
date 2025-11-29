@@ -1,0 +1,10 @@
+************* Module code2-2
+files\code2-2.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code2-2.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code2-2.py:1:0: C0103: Module name "code2-2" doesn't conform to snake_case naming style (invalid-name)
+files\code2-2.py:17:4: C0103: Constant name "figura" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code2-2.py:24:4: C0103: Constant name "figura" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 7.37/10 (previous run: 7.37/10, +0.00)
+

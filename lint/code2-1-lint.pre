@@ -1,0 +1,10 @@
+************* Module code2-1
+files\code2-1.py:17:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)
+files\code2-1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code2-1.py:1:0: C0103: Module name "code2-1" doesn't conform to snake_case naming style (invalid-name)
+files\code2-1.py:18:4: C0103: Constant name "figura" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code2-1.py:25:4: C0103: Constant name "figura" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 7.37/10 (previous run: 7.37/10, +0.00)
+

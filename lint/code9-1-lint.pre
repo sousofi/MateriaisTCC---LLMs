@@ -1,0 +1,9 @@
+************* Module code9-1
+files\code9-1.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code9-1.py:32:26: C0303: Trailing whitespace (trailing-whitespace)
+files\code9-1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code9-1.py:1:0: C0103: Module name "code9-1" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 8.52/10 (previous run: 8.52/10, +0.00)
+

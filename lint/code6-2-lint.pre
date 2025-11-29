@@ -1,0 +1,20 @@
+************* Module code6-2
+files\code6-2.py:3:16: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:5:24: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:9:77: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:14:71: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:21:19: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:27:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:30:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code6-2.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code6-2.py:1:0: C0103: Module name "code6-2" doesn't conform to snake_case naming style (invalid-name)
+files\code6-2.py:10:0: C0103: Constant name "linf" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code6-2.py:11:0: C0103: Constant name "lsup" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code6-2.py:18:0: C0103: Constant name "palpites" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code6-2.py:29:4: C0103: Constant name "palpites" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code6-2.py:37:4: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+
+------------------------------------------------------------------
+Your code has been rated at 4.00/10 (previous run: 3.57/10, +0.43)
+

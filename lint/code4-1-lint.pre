@@ -1,0 +1,8 @@
+************* Module code4-1
+files\code4-1.py:20:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code4-1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code4-1.py:1:0: C0103: Module name "code4-1" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 7.00/10 (previous run: 4.55/10, +2.45)
+

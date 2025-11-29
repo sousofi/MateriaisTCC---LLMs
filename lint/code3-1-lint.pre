@@ -1,0 +1,28 @@
+************* Module code3-1
+files\code3-1.py:10:40: C0303: Trailing whitespace (trailing-whitespace)
+files\code3-1.py:16:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+files\code3-1.py:17:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+files\code3-1.py:19:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+files\code3-1.py:20:0: W0311: Bad indentation. Found 9 spaces, expected 8 (bad-indentation)
+files\code3-1.py:21:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+files\code3-1.py:22:0: W0311: Bad indentation. Found 9 spaces, expected 8 (bad-indentation)
+files\code3-1.py:23:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+files\code3-1.py:24:0: W0311: Bad indentation. Found 9 spaces, expected 8 (bad-indentation)
+files\code3-1.py:26:0: W0311: Bad indentation. Found 3 spaces, expected 4 (bad-indentation)
+files\code3-1.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code3-1.py:32:79: C0303: Trailing whitespace (trailing-whitespace)
+files\code3-1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code3-1.py:1:0: C0103: Module name "code3-1" doesn't conform to snake_case naming style (invalid-name)
+files\code3-1.py:16:6: C0103: Constant name "ingresso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:17:6: C0103: Constant name "tipo_acesso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:20:9: C0103: Constant name "ingresso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:22:9: C0103: Constant name "ingresso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:24:9: C0103: Constant name "ingresso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:26:3: C0103: Constant name "ingresso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:26:14: E0601: Using variable 'ingresso' before assignment (used-before-assignment)
+files\code3-1.py:28:4: C0103: Constant name "tipo_acesso" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code3-1.py:30:4: C0103: Constant name "tipo_acesso" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+

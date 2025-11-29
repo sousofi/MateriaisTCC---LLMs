@@ -1,0 +1,12 @@
+************* Module code4-3
+files\code4-3.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code4-3.py:22:0: C0305: Trailing newlines (trailing-newlines)
+files\code4-3.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code4-3.py:1:0: C0103: Module name "code4-3" doesn't conform to snake_case naming style (invalid-name)
+files\code4-3.py:11:10: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+files\code4-3.py:16:14: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+files\code4-3.py:18:14: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+
+-----------------------------------
+Your code has been rated at 3.64/10
+

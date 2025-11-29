@@ -1,0 +1,20 @@
+************* Module code4-2
+files\code4-2.py:12:0: W0311: Bad indentation. Found 3 spaces, expected 4 (bad-indentation)
+files\code4-2.py:16:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+files\code4-2.py:17:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+files\code4-2.py:19:0: C0301: Line too long (112/100) (line-too-long)
+files\code4-2.py:19:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+files\code4-2.py:21:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+files\code4-2.py:24:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code4-2.py:25:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code4-2.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code4-2.py:1:0: C0103: Module name "code4-2" doesn't conform to snake_case naming style (invalid-name)
+files\code4-2.py:10:0: C0103: Constant name "soma" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code4-2.py:12:9: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+files\code4-2.py:16:13: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+files\code4-2.py:19:13: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+files\code4-2.py:21:13: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+
+------------------------------------------------------------------
+Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+

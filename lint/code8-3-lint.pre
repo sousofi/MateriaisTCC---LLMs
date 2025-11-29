@@ -1,0 +1,15 @@
+************* Module code8-3
+files\code8-3.py:6:76: C0303: Trailing whitespace (trailing-whitespace)
+files\code8-3.py:13:52: C0303: Trailing whitespace (trailing-whitespace)
+files\code8-3.py:20:73: C0303: Trailing whitespace (trailing-whitespace)
+files\code8-3.py:37:27: C0303: Trailing whitespace (trailing-whitespace)
+files\code8-3.py:38:21: C0303: Trailing whitespace (trailing-whitespace)
+files\code8-3.py:51:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code8-3.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code8-3.py:1:0: C0103: Module name "code8-3" doesn't conform to snake_case naming style (invalid-name)
+files\code8-3.py:23:0: C0103: Constant name "linf" doesn't conform to UPPER_CASE naming style (invalid-name)
+files\code8-3.py:24:0: C0103: Constant name "lsup" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+-----------------------------------
+Your code has been rated at 6.43/10
+

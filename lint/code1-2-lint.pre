@@ -1,0 +1,11 @@
+************* Module code1-2
+files\code1-2.py:4:72: C0303: Trailing whitespace (trailing-whitespace)
+files\code1-2.py:8:35: C0303: Trailing whitespace (trailing-whitespace)
+files\code1-2.py:15:51: C0303: Trailing whitespace (trailing-whitespace)
+files\code1-2.py:17:0: C0301: Line too long (171/100) (line-too-long)
+files\code1-2.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code1-2.py:1:0: C0103: Module name "code1-2" doesn't conform to snake_case naming style (invalid-name)
+files\code1-2.py:7:0: C0103: Constant name "anoAtual" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 2.22/10 (previous run: 2.22/10, +0.00)

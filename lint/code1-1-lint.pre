@@ -1,0 +1,12 @@
+************* Module code1-1
+files\code1-1.py:13:0: C0303: Trailing whitespace (trailing-whitespace)
+files\code1-1.py:14:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+files\code1-1.py:16:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+files\code1-1.py:18:0: C0304: Final newline missing (missing-final-newline)
+files\code1-1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+files\code1-1.py:1:0: C0103: Module name "code1-1" doesn't conform to snake_case naming style (invalid-name)
+files\code1-1.py:7:0: C0103: Constant name "anoAtual" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 3.00/10 (previous run: 3.00/10, +0.00)
+
